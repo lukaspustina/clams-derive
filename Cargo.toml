@@ -1,0 +1,12 @@
+[package]
+name = "clams-derive"
+version = "0.0.1"
+authors = ["Lukas Pustina <lukas@pustina.net>"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "^0.4"
+syn = "^0.12"
+
