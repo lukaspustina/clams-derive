@@ -1,4 +1,4 @@
-#![recursion_limit="128"]
+#![recursion_limit = "128"]
 extern crate proc_macro;
 #[macro_use]
 extern crate quote;
@@ -8,7 +8,7 @@ use proc_macro::TokenStream;
 
 #[proc_macro_derive(Config)]
 pub fn config(input: TokenStream) -> TokenStream {
-     let input: syn::DeriveInput = syn::parse(input).unwrap();
+    let input: syn::DeriveInput = syn::parse(input).unwrap();
 
     // Build the impl
     let gen = impl_config(&input);
@@ -39,4 +39,3 @@ fn impl_config(ast: &syn::DeriveInput) -> quote::Tokens {
         }
     }
 }
-
