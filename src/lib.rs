@@ -21,14 +21,16 @@ fn impl_config(ast: &syn::DeriveInput) -> quote::Tokens {
     let name = &ast.ident;
 
     quote! {
-        use std::fs::File;
-        use std::io::Read;
         use std::path::Path;
-        use toml;
+
         impl Config for #name {
             type ConfigStruct = #name;
 
-            fn from_file<T: AsRef<Path>>(file_path: T) -> Result<Self::ConfigStruct> {
+            fn from_file<T: AsRef<Path>>(file_path: T) -> ConfigResult<Self::ConfigStruct> {
+                use std::fs::File;
+                use std::io::Read;
+                use toml;
+
                 let mut file = File::open(file_path)?;
                 let mut content = String::new();
                 file.read_to_string(&mut content)?;
