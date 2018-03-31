@@ -3,6 +3,7 @@ name = "clams-derive"
 version = "0.0.1"
 authors = ["Lukas Pustina <lukas@pustina.net>"]
 description = "Clams help building shells"
+repository = "https://github.com/lukaspustina/clams-derive.git"
 readme = "README.md"
 license = "MIT"
 keywords = ["shell", "cli"]
