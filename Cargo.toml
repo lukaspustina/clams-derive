@@ -2,6 +2,19 @@
 name = "clams-derive"
 version = "0.0.1"
 authors = ["Lukas Pustina <lukas@pustina.net>"]
+description = "Clams help building shells"
+readme = "README.md"
+license = "MIT"
+keywords = ["shell", "cli"]
+include = [
+  "README.md",
+  "LICENSE",
+  "**/*.rs",
+  "Cargo.toml",
+]
+
+[badges]
+travis-ci = { repository = "lukaspustina/clams-derive", branch = "master" }
 
 [lib]
 proc-macro = true
