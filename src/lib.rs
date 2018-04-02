@@ -38,6 +38,16 @@ fn impl_config(ast: &syn::DeriveInput) -> quote::Tokens {
 
                 Ok(config)
             }
+
+            fn smart_load<T: AsRef<Path>>(file_paths: &[T]) -> ConfigResult<Self::ConfigStruct> {
+                for fp in file_paths {
+                    let config = Self::from_file(fp);
+                    if config.is_ok() { return config };
+                }
+
+                let failed_configs: Vec<String> = file_paths.iter().map(|x| x.as_ref().to_string_lossy().to_string()).collect();
+                Err(ConfigError::from_kind(ConfigErrorKind::NoSuitableConfigFound(failed_configs)))
+            }
         }
     }
 }
