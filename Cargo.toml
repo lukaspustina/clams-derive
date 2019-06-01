@@ -1,6 +1,6 @@
 [package]
 name = "clams-derive"
-version = "0.0.4"
+version = "0.0.5"
 authors = ["Lukas Pustina <lukas@pustina.net>"]
 description = "Clams help building shells"
 repository = "https://github.com/lukaspustina/clams-derive.git"
@@ -13,6 +13,7 @@ include = [
   "**/*.rs",
   "Cargo.toml",
 ]
+edition = "2018"
 
 [badges]
 travis-ci = { repository = "lukaspustina/clams-derive", branch = "master" }
