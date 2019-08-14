@@ -22,6 +22,6 @@ travis-ci = { repository = "lukaspustina/clams-derive", branch = "master" }
 proc-macro = true
 
 [dependencies]
-quote = "^0.4"
+quote = "^1.0"
 syn = "^0.12"
 
